@@ -64,7 +64,7 @@ export class Option<T> {
         return Some(newValue as any);
       }
     }
-    return None;
+    return None();
   }
 
   mapOr<R>(value: R, cb: (value: T) => R): R {
@@ -103,7 +103,7 @@ export class Option<T> {
     if (this.#has && other.#has) {
       return other;
     } else {
-      return None;
+      return None();
     }
   }
 
@@ -111,7 +111,7 @@ export class Option<T> {
     if (this.#has) {
       return f(this.#value as T);
     } else {
-      return None;
+      return None();
     }
   }
 
@@ -119,7 +119,7 @@ export class Option<T> {
     if (this.#has && predicate(this.#value as T)) {
       return this;
     } else {
-      return None;
+      return None();
     }
   }
 
@@ -142,10 +142,10 @@ export class Option<T> {
   }
 
   xor(other: Option<T>): Option<T> {
-    if (other.#has && this.#has) return None;
+    if (other.#has && this.#has) return None();
     if (!other.#has && this.#has) return this;
     if (other.#has && !this.#has) return other;
-    return None;
+    return None();
   }
 
   insert(value: T): T {
@@ -186,7 +186,7 @@ export class Option<T> {
     if (oldHadValue) {
       return Some(oldValue);
     } else {
-      return None;
+      return None();
     }
   }
 
@@ -206,7 +206,13 @@ export class Option<T> {
 }
 
 // deno-lint-ignore no-explicit-any
-export const None = (Option as any).create_none();
+export function None(): Option<any>;
+export function None<T>(): Option<T>;
+// deno-lint-ignore no-explicit-any
+export function None(): Option<any> {
+  // deno-lint-ignore no-explicit-any
+  return (Option as any).create_none();
+}
 
 export function Some(): Option<void>;
 export function Some<T>(value: T): Option<T>;
