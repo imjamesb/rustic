@@ -150,12 +150,14 @@ export class Option<T> {
 
   insert(value: T): T {
     this.#value = value;
+    this.#has = true;
     return value;
   }
 
   getOrInsert(value: T): T {
     if (this.#has) return this.#value as T;
     this.#value = value;
+    this.#has = true;
     return value;
   }
 
