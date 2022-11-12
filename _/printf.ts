@@ -818,14 +818,3 @@ export function sprintf(format: string, ...args: unknown[]): string {
   const printf = new Printf(format, ...args);
   return printf.doPrintf();
 }
-
-/**
- * Converts and format a variable number of `args` as is specified by `format`.
- * `printf` writes the formatted string to standard output.
- * @param format
- * @param args
- */
-export function printf(format: string, ...args: unknown[]) {
-  const s = sprintf(format, ...args);
-  Deno.stdout.writeSync(new TextEncoder().encode(s));
-}
