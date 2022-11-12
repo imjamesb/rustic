@@ -783,7 +783,7 @@ class Printf {
         trailingComma: false,
         depth: Infinity,
         iterableLimit: Infinity,
-      }).replace(/[\n\r]+/g, " ")
+      }).replace(/[\n\r]+[\s]*/g, " ")
       : Deno.inspect(val, {
         colors: true,
         compact: false,
