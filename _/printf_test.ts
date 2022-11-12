@@ -1,3 +1,4 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
 // Copyright 2018-2022 the Deno authors. All rights reserved. MIT license.
 //
 // A number of test-cases based on:
