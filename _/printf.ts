@@ -93,8 +93,6 @@ class Printf {
             this.handleFormat();
           }
           break;
-        default:
-          throw Error("Should be unreachable, certainly a bug in the lib.");
       }
     }
     // check for unhandled args
