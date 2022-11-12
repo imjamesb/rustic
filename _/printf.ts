@@ -795,15 +795,15 @@ class Printf {
 
   fmtDisplay(val: Display): string {
     const writer = {
-      value: "",
+      value: [],
       writeSync(arr) {
-        this.value += d.decode(arr);
+        this.value.push(...arr);
         return arr.length;
       },
-    } as Deno.WriterSync & { value: string };
+    } as Deno.WriterSync & { value: number[] };
     const result = val.fmt(writer);
     result.expect("Failed to format!");
-    return writer.value;
+    return d.decode(new Uint8Array(writer.value));
   }
 }
 
