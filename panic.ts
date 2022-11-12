@@ -1,3 +1,5 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
+
 import { sprintf } from "./_/printf.ts";
 
 /**

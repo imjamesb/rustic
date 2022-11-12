@@ -1,3 +1,5 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
+
 import { panic } from "./panic.ts";
 import { Err, Ok, Result } from "./Result.ts";
 

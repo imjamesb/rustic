@@ -1,3 +1,5 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
+
 import { Err, Ok, type Result } from "./Result.ts";
 import { sprintf } from "./_/printf.ts";
 

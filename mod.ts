@@ -1,3 +1,5 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
+
 export type { Display, FmtResult } from "./Display.ts";
 export type { Rerror } from "./Error.ts";
 export { format, write } from "./ops.ts";

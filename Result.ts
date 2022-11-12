@@ -1,3 +1,5 @@
+// Copyright 2022 James Bradlee. All rights reserved. MIT License.
+
 import { panic } from "./panic.ts";
 
 export class Result<T, E> {
